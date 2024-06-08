@@ -23,14 +23,14 @@ use Config;
 class AmoCRMService {
     protected $client;
 
-    public function __construct() {
+    public function __construct() 
+    {
         $this->client = new AmoCRMApiClient(config('api.clientId'), config('api.secretKey'));
-
-        $this->client->setAccessToken(new LongLivedAccessToken(config('api.longLiveToken')))->setAccountBaseDomain(config('api.baseDomain') . '.amocrm.ru');
-            
+        $this->client->setAccessToken(new LongLivedAccessToken(config('api.longLiveToken')))->setAccountBaseDomain(config('api.baseDomain') . '.amocrm.ru');   
     }
 
-    public function put(int $price, bool $isLongVisitor, string $name, string $email, string $phone): bool {
+    public function put(int $price, bool $isLongVisitor, string $name, string $email, string $phone): bool 
+    {
         $lead = $this->createLead($price, $isLongVisitor);
         $contact = $this->createContact($name, $email, $phone);
 
@@ -82,7 +82,8 @@ class AmoCRMService {
         return $this->addContactInfo($contact, $email, $phone);
     }
 
-    private function addContactInfo(ContactModel $contact, string $email, string $phone) {
+    private function addContactInfo(ContactModel $contact, string $email, string $phone) 
+    {
         return $contact->setCustomFieldsValues(
             (new CustomFieldsValuesCollection())
                 ->add(
