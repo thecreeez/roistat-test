@@ -27,14 +27,14 @@
             <input type="hidden" id="isVisitLong" name="isVisitLong">
 
             <div class="form-floating pb-2">
-                <input type="text" class="form-control {{ $errors->first('name') ? 'is-invalid' : '' }}" id="nameInput" name="name" placeholder="Имя" value="{{ old('name') }}" required min="3" max="20">
+                <input type="text" class="form-control {{ $errors->first('name') ? 'is-invalid' : '' }}" id="nameInput" name="name" placeholder="Имя" value="{{ old('name') }}">
                 <label for="nameInput">Имя</label>
                 <div class="invalid-feedback">
                     {{ $errors->first('name') }}
                 </div>
             </div>
             <div class="form-floating pb-2">
-                <input type="email" class="form-control {{ $errors->first('email') ? 'is-invalid' : '' }}" id="emailInput" name="email" placeholder="Email" value="{{ old('email') }}" required>
+                <input type="email" class="form-control {{ $errors->first('email') ? 'is-invalid' : '' }}" id="emailInput" name="email" placeholder="Email" value="{{ old('email') }}">
                 <label for="emailInput">Почта</label>
                 <div class="invalid-feedback">
                     {{ $errors->first('email') }}
@@ -42,7 +42,7 @@
             </div>
             <div class="form-floating pb-2">
                 <input type="text" class="form-control {{ $errors->first('phone') ? 'is-invalid' : '' }}" id="phoneInput" 
-                    name="phone" placeholder="Phone number" value="{{ old('phone') }}" min="11" max="11" required>
+                    name="phone" placeholder="Phone number" value="{{ old('phone') }}">
                 <label for="phoneInput">Номер телефона</label>
                 <div class="invalid-feedback">
                     {{ $errors->first('phone') }}
